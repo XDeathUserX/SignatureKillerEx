@@ -50,7 +50,7 @@ jobs:
    #       ln -s /usr/bin/ninja .
     - name: Build Android
       run: |
-        cd ${{ github.workspace }}/SignatureKillerEx/killer/
+        cd ${{ github.workspace }}/SignatureKillerEx/
         chmod +x ./gradlew
         ./gradlew "assembleRelease"
         # bash gradlew build
