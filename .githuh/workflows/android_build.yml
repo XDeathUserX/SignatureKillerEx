@@ -52,9 +52,9 @@ jobs:
       run: |
         cd ${{ github.workspace }}/SignatureKillerEx/
         chmod +x ./gradlew
-        ./gradlew "assembleRelease"
+        ./gradlew "assembleRelwithDebugInfo"
         # bash gradlew build
-        mv $(find app/build/outputs/apk/release/ -type f | grep -E "\.apk$") ${{ github.workspace }}/signaturekillerex-android-${{ steps.version.outputs.date }}-${{ steps.version.outputs.version }}.apk
+        mv $(find app/build/outputs/apk/debug/ -type f | grep -E "\.apk$") ${{ github.workspace }}/signaturekillerex-android-${{ steps.version.outputs.date }}-${{ steps.version.outputs.version }}.apk
 
     - name: Release SignatureKillerEx (SignatureKillerEx-Android)
       uses: softprops/action-gh-release@v2
